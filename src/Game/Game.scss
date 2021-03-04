@@ -77,11 +77,13 @@
       height: 100%;
       background-color: rgb(104, 28, 226);
       border-radius: 15px;
-      opacity: 1;
+      opacity: 0;
     }
-    svg {
-      width: 60%;
-      height: 60%;
+    .svg {
+      svg {
+        width: 100px;
+        height: auto;
+      }
     }
     &:hover {
       animation: wiggle .7s infinite;
@@ -90,8 +92,7 @@
 }
 
 
-
-@media screen and (max-width:1050px){
+@media screen and (max-width:1250px){
 
 .container {
   display: flex;
