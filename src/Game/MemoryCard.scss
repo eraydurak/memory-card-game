@@ -2,14 +2,15 @@
 .MemoryCard {
     display: grid;
     place-items: center;
-    width: 150px;
-    height: 80px;
     margin: 5px;
     cursor: pointer;
     position: relative;
     perspective: 800px;
     height: 150px;
-    width: 120px;
+    width: 150px;
+    &:hover {
+    animation: eray 1s infinite;
+    }
   }
   
   .MemoryCard__inner {
@@ -21,6 +22,7 @@
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    background-color: aliceblue;
   }
   
   .MemoryCard__inner.flipped {
@@ -42,6 +44,13 @@
   }
   
   .MemoryCard__back {
-    background:aliceblue;
+    background:rgba(45, 140, 223,0.4);
   }
   
+  @keyframes eray {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}

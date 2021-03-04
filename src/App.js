@@ -4,7 +4,7 @@ import "./App.scss";
 import MemoryCard from "./Game/MemoryCard";
 
 function generateDeck() {
-  const symbols = ["◕_◕", "^_^", "ᓚᘏᗢ", "¯\_(ツ)_/¯", "(●'◡'●)", "(⊙_⊙;)", "💪", "🍔"];
+  const symbols = ["◕_◕", "^_^", "ᓚᘏᗢ", "¯\\_(ツ)_/¯", "(●'◡'●)", "(⊙_⊙;)", "💪", "🍔"];
   const deck = [];
   for (let i = 0; i < 16; i++) {
     deck.push({
@@ -99,8 +99,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Memory Game</h1>
-          <h3>Match cards to win</h3>
+          <h1>Match cards to win</h1>
         </header>
         <div className="App-cards">
           {cardsJSX.slice(0, 4)}

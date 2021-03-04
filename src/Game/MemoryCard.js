@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './MemoryCard.css';
+import './MemoryCard.scss';
 
 class Card extends Component {
   render() {
@@ -8,7 +8,6 @@ class Card extends Component {
       innerClass += ' flipped';
     }
     return (
-    <div className="container">
       <div className="MemoryCard" onClick={this.props.pickCard}>
         <div className={innerClass}>
           <div className="MemoryCard__back">
@@ -17,7 +16,6 @@ class Card extends Component {
             {this.props.symbol}
           </div>
         </div>
-      </div>
       </div>
     )
   }

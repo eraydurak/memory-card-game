@@ -1,35 +1,81 @@
-body{
+@mixin centered(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+body,html{
     display:flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    margin: 0;
 }
 
 .App {
+  max-width: 950px;
+    @include centered;
     text-align: center;
+    flex-direction: column;
+    margin: 0;
+    padding:5px 0 50px 0px;
+    background: rgba( 211, 69, 217, 0.20 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0.0px );
+    -webkit-backdrop-filter: blur( 0.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
 
   .App-header {
-    background-color: #4f7bd3c4;
-    min-height: 50px;
-    color: white;
+    width: 80vw;   
+    color: rgb(226, 63, 63);
     padding: 10px;
-    margin-bottom: 20px;
-    h3 {
+    //margin-bottom: 10px;
+    @include centered();
+    flex-direction: column;
+    border-radius: 12px;
+    h1 {
         font-weight: bold;
-        color: #c2ff50;
+        color: #3a4927;
+        text-shadow: 4px 4px 2px rgba(255,255,255,0.6);
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
   }
 
-  
 .App-cards {
     display: grid;
     flex-wrap: wrap;
     max-width: 650px;
     margin: 0 auto;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
     grid-gap: 10px;
   }
   
+
+  @media screen and (max-width: 650px) {
+    body {
+      background: rgba( 211, 69, 217, 0.20 );
+    }
+    .App {
+      padding-top: 410px;
+      
+    }
+    .App-cards {
+      grid-gap: 5px;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  @media screen and (max-width:500px){
+    .App-cards {
+      grid-gap: 5px;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+    }
+  }
